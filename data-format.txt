@@ -1,0 +1,146 @@
+=== DATA FORMAT V.1.0 ===========================================================================================
+Format:
+
+Field number. Offset - Description
+ 
+ 1. 0  - Secret phrase 2 (n bytes, one for each character - only ASCII characters that require 1 byte each used)
+
+ 2. 42  - Image width (4 bytes)
+ 3. 46  - CRC (UInt32, 4 bytes)
+ 
+ 4. 50  - Image height (4 bytes)
+ 5. 54  - CRC (UInt32, 4 bytes)
+
+ 6. 58  - Number of bytes of the compressed message (UInt32, 4 bytes)
+ 7. 62  - CRC (UInt32, 4 bytes)
+
+ 8. 66  - Major version (4 bytes)
+ 9. 70  - CRC (UInt32, 4 bytes)
+
+10. 74  - Minor version (4 bytes)
+11. 78  - CRC (UInt32, 4 bytes)
+
+12. 82  - Content type (UInt32, 4 bytes)
+13. 86  - CRC (UInt32, 4 bytes)
+
+14. 90  - Spare1 (UInt32, 4 bytes)
+15. 94  - CRC (UInt32, 4 bytes)
+
+16. 98  - Spare2 (UInt32, 4 bytes)
+17. 102 - CRC (UInt32, 4 bytes)
+
+18. 106 - Spare3 (UInt32, 4 bytes)
+19. 110 - CRC (UInt32, 4 bytes)
+
+20. 114 - Spare4 (UInt32, 4 bytes)
+21. 118 - CRC (UInt32, 4 bytes)
+
+22. 122 - Spare5 (UInt32, 4 bytes)
+23. 126 - CRC (UInt32, 4 bytes)
+
+24. 130 - Message compressed with GZipStream containing:
+           <parent node name> RecordSeparator <node name> GroupSeparator
+           <parent node name> RecordSeparator <node name> GroupSeparator
+           ...
+           <parent node name> RecordSeparator <node name> GroupSeparator
+           FileSeparator
+           <node name> RecordSeparator <node text> GroupSeparator
+           <node name> RecordSeparator <node text> GroupSeparator
+           ...
+           <node name> RecordSeparator <node text> GroupSeparator
+25.130+Compressed message length - CRC (UInt32, 4 bytes)
+
+26. 134+Compressed message length - Again the secret phrase 2 of point 1
+
+
+
+=== DATA FORMAT (third draft version) ============================================================================
+Format:
+1. Secret phrase (n bytes, one for each character - used only ASCII characters which require 1 byte each)
+2. Number of bytes of the compressed message (UInt32, 4 bytes)
+3. Image width (2 bytes)
+4. Major version (2 bytes)
+5. Image height (2 bytes)
+6. Minor version (2 bytes)
+7. Message compressed with GZipStream containing:
+      <parent node name> RecordSeparator <node name> GroupSeparator
+      <parent node name> RecordSeparator <node name> GroupSeparator
+      ...
+      <parent node name> RecordSeparator <node name> GroupSeparator
+      FileSeparator
+      <node name> RecordSeparator <node text> GroupSeparator
+      <node name> RecordSeparator <node text> GroupSeparator
+      ...
+      <node name> RecordSeparator <node text> GroupSeparator
+8. Again the secret sentence of point 1
+
+
+
+=== DATA FORMAT (Second draft version) ===========================================================================
+Format:
+1. Secret phrase (n bytes, one for each character - used only ASCII characters which require 1 byte each)
+2. Number of bytes of the compressed message (UInt32, 4 bytes)
+3. Major version (1 byte)
+4. Image width (3 bytes)
+5. Minor version (1 byte)
+6. Image height (3 bytes)
+7. Message compressed with GZipStream containing:
+      <parent node name> RecordSeparator <node name> GroupSeparator
+      <parent node name> RecordSeparator <node name> GroupSeparator
+      ...
+      <parent node name> RecordSeparator <node name> GroupSeparator
+      FileSeparator
+      <node name> RecordSeparator <node text> GroupSeparator
+      <node name> RecordSeparator <node text> GroupSeparator
+      ...
+      <node name> RecordSeparator <node text> GroupSeparator
+8. Again the secret sentence of point 1
+
+
+
+=== DATA FORMAT (First draft version) ============================================================================
+Format:
+1. Secret phrase (n bytes, one for each character - used only ASCII characters which require 1 byte each)
+2. Number of bytes of the compressed message (UInt32, 4 bytes)
+3. Image width (UInt32, 4 bytes)
+4. Image height (UInt32, 4 bytes)
+5. Message compressed with GZipStream containing:
+     <parent node name> RecordSeparator <node name> GroupSeparator
+     <parent node name> RecordSeparator <node name> GroupSeparator
+     ...
+     <parent node name> RecordSeparator <node name> GroupSeparator
+     FileSeparator
+     <node name> RecordSeparator <node text> GroupSeparator
+     <node name> RecordSeparator <node text> GroupSeparator
+     ...
+     <node name> RecordSeparator <node text> GroupSeparator
+6. Again the secret phrase of point 1
+
+Description of the message
+The message represents a dialogue between the computer and the user. It must respect the following form:
+    - Initial question
+        - Answer 1
+            - Second level question
+                - Answer 1
+                - Reply ...
+                - Answer n
+        - Answer 2
+            - Second level question
+                - Answer 1
+                - Reply ...
+                - Answer n
+        - Reply ...
+            - Second level question
+                - Answer 1
+                - Reply ...
+                - Answer n
+        - Answer n
+            - Second level question
+                - Answer 1
+                - Reply ...
+                - Answer n
+
+There is no depth limit.
+
+
+
