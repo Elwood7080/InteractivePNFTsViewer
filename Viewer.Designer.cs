@@ -116,7 +116,7 @@ namespace PNFT_Viewer
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 830);
+            this.panel1.Size = new System.Drawing.Size(1280, 750);
             this.panel1.TabIndex = 28;
             // 
             // picture
@@ -124,7 +124,7 @@ namespace PNFT_Viewer
             this.picture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picture.Location = new System.Drawing.Point(0, 0);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(1200, 800);
+            this.picture.Size = new System.Drawing.Size(1280, 720);
             this.picture.TabIndex = 27;
             this.picture.TabStop = false;
             // 
@@ -132,9 +132,9 @@ namespace PNFT_Viewer
             // 
             this.btnLoadPicture.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLoadPicture.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadPicture.Location = new System.Drawing.Point(0, 800);
+            this.btnLoadPicture.Location = new System.Drawing.Point(0, 720);
             this.btnLoadPicture.Name = "btnLoadPicture";
-            this.btnLoadPicture.Size = new System.Drawing.Size(1200, 30);
+            this.btnLoadPicture.Size = new System.Drawing.Size(1280, 30);
             this.btnLoadPicture.TabIndex = 28;
             this.btnLoadPicture.Text = "Open file";
             this.btnLoadPicture.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@ namespace PNFT_Viewer
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1214, 862);
+            this.tabControl1.Size = new System.Drawing.Size(1294, 782);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -157,7 +157,7 @@ namespace PNFT_Viewer
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1206, 836);
+            this.tabPage1.Size = new System.Drawing.Size(1286, 756);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Image";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@ namespace PNFT_Viewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 862);
+            this.ClientSize = new System.Drawing.Size(1294, 782);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);

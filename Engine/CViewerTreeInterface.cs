@@ -19,7 +19,7 @@ namespace PNFT_Viewer
             string text = ViewerCompression.ViewerDecompress(byteArray);
             if (text == "")
             {
-                ViewerUtils.ShowError("Empty message or decompression error!");
+                ViewerUtils.ShowError("Empty message or decompression error! This image may not be a PNFTs, or you may have downloaded the preview instead of the real image!");
                 return;
             }
 
